@@ -1,2 +1,1 @@
-# MySQL
-Apuntes bases de datos
+# Apuntes de MySQL para Bases de Datos
