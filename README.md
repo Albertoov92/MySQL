@@ -5,7 +5,7 @@
   - [SELECT](#select)
   - [FROM](#from)
   - [WHERE](#where)
-    - [Operadores](#operadores-de-where)
+    - [Operadores de WHERE](#operadores-de-where)
 
 ## Detalles importantes
 1. Los strings van siempre entre comillas simples.
@@ -68,3 +68,10 @@ SELECT *
 FROM Products
 WHERE Price BETWEEN 10 AND 20;
 ```
+- Los operadores **<, > o =** se utilzan para comparar datos de las tablas.
+```sql
+SELECT nombre
+FROM world
+WHERE population > 200000000;
+```
+###ORDER
