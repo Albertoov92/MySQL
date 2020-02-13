@@ -68,10 +68,53 @@ SELECT *
 FROM Products
 WHERE Price BETWEEN 10 AND 20;
 ```
-- Los operadores **<, > o =** se utilzan para comparar datos de las tablas.
+- Los operadores **<, >, = o <>(diferente)** se utilzan para comparar datos de las tablas.
+En la siguiente insturcción filtramos para que solo aparezacan los paises con más de 200000000 habitantes.
 ```sql
 SELECT nombre
 FROM world
 WHERE population > 200000000;
 ```
-###ORDER
+- Los operadores AND y OR se utilizan para filtrar registros en función de más de una condición:
+  - El operador **AND** muestra un registro si todas las condiciones separadas por AND son verdaderas.    
+  La siguiente instrucción SQL selecciona todos los campos de "Clientes" donde el país es "Alemania" Y la ciudad es "Berlín":
+  ```sql
+  SELECT *
+  FROM Customers
+  WHERE Country='Germany' AND City='Berlin';
+  ```
+  - El operador **OR** muestra un registro si alguna de las condiciones separadas por OR es verdadera.  
+  La siguiente instrucción SQL selecciona todos los campos de "Clientes" donde la ciudad es "Berlín" O "München":
+  ```sql
+  SELECT *
+  FROM Customers
+  WHERE City='Berlin' OR City='München';
+  ```
+- El operador **NOT** muestra un registro si la (s) condición (es) NO ES verdadera.   
+La siguiente instrucción SQL selecciona todos los campos de "Clientes" donde el país NO es "Alemania":
+```sql
+SELECT *
+FROM Customers
+WHERE NOT Country='Germany';
+```
+### ORDER BY
+La palabra clave ORDER BY ordena los registros en orden ascendente de forma predeterminada. Para ordenar los registros en orden descendente, use la palabra clave DESC.   
+La siguiente instrucción SQL selecciona a todos los clientes de la tabla "Clientes", ordenados por la columna "País":
+```sql
+SELECT *
+FROM Customers
+ORDER BY Country;
+```
+### GROUP BY
+La instrucción GROUP BY agrupa filas que tienen los mismos valores en filas de resumen, como "buscar el número de clientes en cada país".
+La instrucción GROUP BY a menudo se usa con funciones agregadas (COUNT, MAX, MIN, SUM, AVG) para agrupar el conjunto de resultados por una o más columnas.  
+La siguiente instrucción SQL enumera el número de clientes en cada país:
+```SQL
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+```
+### JOIN
+Una cláusula JOIN se usa para combinar filas de dos o más tablas, en función de una columna relacionada entre ellas.
+Veamos una selección de la tabla "Pedidos":
+![Tabla1](1.PNG)
