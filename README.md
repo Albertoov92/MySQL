@@ -37,3 +37,16 @@ FROM Customers
 WHERE Country='Mexico';
 ```
 En esta instrucción SQL selecciona a todos los clientes del país "México", en la tabla "Customers".
+#### Operadores de WHERE
+- El operador **IN** es una abreviatura para múltiples condiciones OR.
+```SQL
+SELECT *
+FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+```
+La instrucción SQL anterior selecciona a todos los clientes que se encuentran en "Alemania", "Francia" o "Reino Unido".
+
+- El operador **LIKE** se usa para buscar un patrón específico en una columna.  
+Hay dos comodines que se usan con frecuencia junto con el operador LIKE:
+  - %: El signo de porcentaje representa cero, uno o varios caracteres
+  - _ - El guión bajo representa un solo carácter
