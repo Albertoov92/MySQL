@@ -2,6 +2,10 @@
 ## Índice
 - [Detalles importantes](#detalles-importantes)
 - [Clausulas](#clausulas)
+  - [SELECT](#select)
+  - [FROM](#from)
+  - [WHERE](#where)
+    - [Operadores](#operadores-de-where)
 
 ## Detalles importantes
 1. Los strings van siempre entre comillas simples.
@@ -38,15 +42,29 @@ WHERE Country='Mexico';
 ```
 En esta instrucción SQL selecciona a todos los clientes del país "México", en la tabla "Customers".
 #### Operadores de WHERE
-- El operador **IN** es una abreviatura para múltiples condiciones OR.
+- El operador **IN** es una abreviatura para múltiples condiciones OR.  
+La siguiente instrucción SQL selecciona a todos los clientes que se encuentran en "Germany", "France" o "UK":
 ```SQL
 SELECT *
 FROM Customers
 WHERE Country IN ('Germany', 'France', 'UK');
 ```
-La instrucción SQL anterior selecciona a todos los clientes que se encuentran en "Alemania", "Francia" o "Reino Unido".
 
 - El operador **LIKE** se usa para buscar un patrón específico en una columna.  
 Hay dos comodines que se usan con frecuencia junto con el operador LIKE:
-  - %: El signo de porcentaje representa cero, uno o varios caracteres
-  - _ - El guión bajo representa un solo carácter
+  - %: El signo de porcentaje representa cero, uno o varios caracteres.
+  - _ - El guión bajo representa un solo carácter.
+
+  La siguiente instrucción SQL selecciona a todos los clientes con un CustomerName que comienza con "a":
+```SQL
+  SELECT *
+  FROM Customers
+  WHERE CustomerName LIKE 'a%';
+  ```
+- El operador **BETWEEN** selecciona valores dentro de un rango dado. Los valores pueden ser números, texto o fechas.   
+La siguiente instrucción SQL selecciona todos los productos con un precio BETWEEN  10 y 20:
+```SQL
+SELECT *
+FROM Products
+WHERE Price BETWEEN 10 AND 20;
+```
