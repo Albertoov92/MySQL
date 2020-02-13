@@ -115,15 +115,17 @@ FROM Customers
 GROUP BY Country;
 ```
 ### JOIN
-Una cláusula JOIN se usa para combinar filas de dos o más tablas, en función de una columna relacionada entre ellas.
+Una cláusula JOIN se usa para combinar filas de dos o más tablas, en función de una columna relacionada entre ellas.    
 Veamos una selección de la tabla "Pedidos":   
 ![Tabla1](1.PNG)    
-Observe que la columna "CustomerID" en la tabla "Pedidos" se refiere al "CustomerID" en la tabla "Clientes". La relación entre las dos tablas anteriores es la columna "CustomerID".  
-Luego, podemos crear la siguiente instrucción SQL (que contiene una UNIÓN INTERNA), que selecciona registros que tienen valores coincidentes en ambas tablas:
-![Tabla2](2.PNG)
+Luego, mire una selección de la tabla "Clientes":
+   ![Tabla2](2.PNG)   
+   Observe que la columna "CustomerID" en la tabla "Pedidos" se refiere al "CustomerID" en la tabla "Clientes". La relación entre las dos tablas anteriores es la columna "CustomerID".   
+   Luego, podemos crear la siguiente instrucción SQL (que contiene una UNIÓN INTERNA), que selecciona registros que tienen valores coincidentes en ambas tablas:
 ```SQL
 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 FROM Orders
 INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 ```
+y producirá algo como esto:   
 ![Tabla3](3.PNG)
