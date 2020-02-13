@@ -2,6 +2,7 @@
 ## Índice
 - [Detalles importantes](#detalles-importantes)
 - [Consultas DQL](#consulta_dql)
+-- [Ejemplo estructura basica SQL DQL](#ejemplo_estructura_basica_sql_dql)
 ## Detalles importantes
 1. Los strings van siempre entre comillas simples.
 2. La \ sirve para dejar un espacio en blanco.
