@@ -6,6 +6,10 @@
   - [FROM](#from)
   - [WHERE](#where)
     - [Operadores de WHERE](#operadores-de-where)
+  - [ORDER BY](#order-by)
+  - [GROUP BY](#group-by)
+  - [JOIN](#join)
+
 
 ## Detalles importantes
 1. Los strings van siempre entre comillas simples.
