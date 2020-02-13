@@ -1,8 +1,8 @@
 # Apuntes de SQL para Bases de Datos
 ## Índice
 - [Detalles importantes](#detalles-importantes)
-- [Consultas DQL](#consulta_dql)
--- [Ejemplo estructura basica SQL DQL](#ejemplo_estructura_basica_sql_dql)
+- [Clausulas](#clausulas)
+
 ## Detalles importantes
 1. Los strings van siempre entre comillas simples.
 2. La \ sirve para dejar un espacio en blanco.
@@ -12,12 +12,28 @@
 6. Para hacer comentarios en una linea usaremos **--** antes del comentario.
 7. Para hacer los comentarios en varias lineas usaremos **/* */** poniendo el comentario entre los asteriscos.
 8. Las clausulas SELECT, FROM, WERE, HAVING ... iran siempre en mayúsculas.
-## Consultas DQL
-### Ejemplo estructura basica SQL DQL
+
+## Clausulas
+
+### SELECT
+La instrucción SELECT se utiliza para seleccionar datos de una base de datos.
 ```SQL
-SELECT Nombre_Columna, Nombre_Columna2 AS [Expresion]
-FROM Nombre_Tabla_Vista
-WHERE Condiciones
-ORDER BY ListaColumnas [ ASC / DESC ];
+SELECT column1, column2, ...
+FROM table_name;
 ```
-### Practica
+Aquí, columna 1, columna2, ... son los nombres de los campos que utilizamos para selecionar los datos que queremos mostrar.
+### FROM
+La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
+```SQL
+SELECT column1, column2, ...
+FROM table_name;
+```
+Aquí, table_name es el nombre de la tabla en la que se encuentra la columnas column1, column2.
+### WHERE
+La cláusula WHERE se usa para filtrar registros.
+```SQL
+SELECT *
+FROM Customers
+WHERE Country='Mexico';
+```
+En esta instrucción SQL selecciona a todos los clientes del país "México", en la tabla "Customers".
