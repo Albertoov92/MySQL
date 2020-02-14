@@ -79,7 +79,7 @@ SELECT nombre
 FROM world
 WHERE population > 200000000;
 ```
-- Los operadores AND y OR se utilizan para filtrar registros en función de más de una condición:
+- Los operadores **AND** y **OR**0se utilizan para filtrar registros en función de más de una condición:
   - El operador **AND** muestra un registro si todas las condiciones separadas por AND son verdaderas.    
   La siguiente instrucción SQL selecciona todos los campos de "Clientes" donde el país es "Alemania" Y la ciudad es "Berlín":
   ```sql
@@ -133,3 +133,12 @@ INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 ```
 y producirá algo como esto:   
 ![Tabla3](3.PNG)
+## INER JOIN
+La palabra clave INNER JOIN selecciona registros que tienen valores que coinciden en ambas tablas.    
+La siguiente instrucción SQL selecciona todos los pedidos con información del cliente:
+```SQL
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+```
+**Nota:** La palabra clave INNER JOIN selecciona todas las filas de ambas tablas siempre que haya una coincidencia entre las columnas. Si hay registros en la tabla "Pedidos" que no tienen coincidencias en "Clientes", ¡estos pedidos no se mostrarán!
