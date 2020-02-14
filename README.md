@@ -134,7 +134,7 @@ INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 y producirá algo como esto:   
 ![Tabla3](3.PNG)
 ## INER JOIN
-La palabra clave INNER JOIN selecciona registros que tienen valores que coinciden en ambas tablas.    
+La palabra clave **INNER JOIN** selecciona registros que tienen valores que coinciden en ambas tablas.    
 La siguiente instrucción SQL selecciona todos los pedidos con información del cliente:
 ```SQL
 SELECT Orders.OrderID, Customers.CustomerName
@@ -143,4 +143,26 @@ INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
 ```   
 
 **Nota:** La palabra clave INNER JOIN selecciona todas las filas de ambas tablas siempre que haya una coincidencia entre las columnas. Si hay registros en la tabla "Pedidos" que no tienen coincidencias en "Clientes", ¡estos pedidos no se mostrarán!
-s
+
+## LEFT JOIN
+La palabra clave **LEFT JOIN** devuelve todos los registros de la tabla izquierda (tabla1) y los registros coincidentes de la tabla derecha (tabla2). El resultado es NULL desde el lado derecho, si no hay coincidencia.   
+La siguiente instrucción SQL seleccionará a todos los clientes y cualquier pedido que puedan tener:
+```SQL
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER BY Customers.CustomerName;
+```   
+
+**Nota:** La palabra clave LEFT JOIN devuelve todos los registros de la tabla izquierda (Clientes), incluso si no hay coincidencias en la tabla derecha (Pedidos).
+## RIGHT
+La palabra clave **RIGHT JOIN** devuelve todos los registros de la tabla derecha (tabla2) y los registros coincidentes de la tabla izquierda (tabla1). El resultado es NULL desde el lado izquierdo, cuando no hay coincidencia.    
+The following SQL statement will return all employees, and any orders they might have placed:
+```SQL
+SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+FROM Orders
+RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+ORDER BY Orders.OrderID;
+```
+
+**Nota:** La palabra clave RIGHT JOIN devuelve todos los registros de la tabla derecha (Empleados), incluso si no hay coincidencias en la tabla izquierda (Pedidos).
