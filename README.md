@@ -3,12 +3,16 @@
 - [Detalles importantes](#detalles-importantes)
 - [Clausulas](#clausulas)
   - [SELECT](#select)
+    -[FUNCIONES DE SELECT](#funciones-de-select)
   - [FROM](#from)
   - [WHERE](#where)
     - [Operadores de WHERE](#operadores-de-where)
   - [ORDER BY](#order-by)
   - [GROUP BY](#group-by)
   - [JOIN](#join)
+  - [INER JOIN](#iner-join)
+  - [LEFT JOIN](#left-join)
+  - [RIGHT JOIN](#right-join)
 
 
 ## Detalles importantes
@@ -75,7 +79,11 @@ SELECT LENGTH(CustomerName) AS LengthOfName
 FROM Customers;
 ```
 - La función **REPLACE ()** reemplaza todas las apariciones de una subcadena dentro de una cadena, con una nueva subcadena.
-
+La siguiente instrucción remplaza "X" por "M".
+```SQL
+SELECT REPLACE("XYZ FGH XYZ", "X", "M");
+```
+**Nota:** Esta función realiza un reemplazo entre mayúsculas y minúsculas.
 ### FROM
 La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
 ```SQL
