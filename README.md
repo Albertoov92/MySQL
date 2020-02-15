@@ -4,6 +4,7 @@
 - [Clausulas](#clausulas)
   - [SELECT](#select)
     - [FUNCIONES DE SELECT](#funciones-de-select)
+    - [OPERADORES DE SELECT](#operadores-de-select)
   - [FROM](#from)
   - [WHERE](#where)
     - [Operadores de WHERE](#operadores-de-where)
@@ -16,6 +17,9 @@
   - [LEFT JOIN](#left-join)
   - [RIGHT JOIN](#right-join)
   - [SUBCONSULTAS](#subconsultas)
+  - [CASE](#case)
+- [SUBLENGUAJES DE SQL](#sublenguajes-de-sql)
+- [AGRADECIMIENTOS](#agradecimientos)
 
 
 ## Detalles importantes
@@ -28,7 +32,7 @@
 7. Para hacer los comentarios en varias lineas usaremos **/* */** poniendo el comentario entre los asteriscos.
 8. Las clausulas SELECT, FROM, WERE, HAVING ... iran siempre en mayúsculas.
 
-## Clausulas
+## CLÁUSULAS
 
 ### SELECT
 La instrucción SELECT se utiliza para seleccionar datos de una base de datos.
@@ -100,12 +104,25 @@ La siguiente instrucción redondea la columna Precio (a un decimal) en la tabla 
 SELECT ProductName, Price, ROUND(Price, 1) AS RoundedPrice
 FROM Products;
 ```
-- La función **COALESCE ()** devuelve el primer valor no nulo en una lista.
+- La función **COALESCE ()** devuelve el primer valor no nulo en una lista.   
 La siguiente instrucción nos muestra en movil de los profesores y en caso de que ese profesor no tenga movil pone el movil del centro que es 7884 15458 6878 .
 ```sql
 SELECT nombre, COALESCE(movil,'7884 15458 6878') AS movil
 FROM profesor;
 ```
+#### OPERADORES DE SELECT
+- El operador **UNION** se usa para combinar el conjunto de resultados de dos o más instrucciones SELECT.   
+La siguiente instrucción SQL devuelve las ciudades de la tabla "Clientes" y "Proveedores"(sin repetir los valores):
+```SQL
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;
+```     
+**NOTA**:
+  - Cada instrucción SELECT dentro de UNION debe tener el mismo número de columnas.
+  - Las columnas también deben tener tipos de datos similares.
+  - Las columnas en cada instrucción SELECT también deben estar en el mismo orden.
 ### FROM
 La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
 ```SQL
@@ -270,3 +287,29 @@ WHERE population >
      (SELECT poblacion FROM world
       WHERE nombre='Rusia');
 ```
+### CASE
+La cláusula **CASE**  permite devolver diferentes valores en diferentes condiciones.
+Si no hay condiciones coincidentes (y no hay ELSE), se devuelve NULL.   
+El siguiente SQL ordenará a los clientes por ciudad. Sin embargo, si la ciudad es NULL, entonces se ordenaran por país:
+```SQL
+SELECT CustomerName, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    WHEN City IS NULL THEN Country
+    ELSE City
+END);
+```
+## SUBLENGUAJES DE SQL
+Del SQL se derivan sublenguajes los cuales son utilizados para la manipulación, definición y control de la información o estructura de una base de datos relacional. Estos sublenguajes son:
+
+  - **DDL** (DATA DEFINITION LANGUAGE) ⇒ Create, Alter, Drop
+  - **DML** (DATA MANIPULATION LANGUAGE) ⇒ Insert, Update, Delete
+  - **DCL** ( DATA CONTROL LANGUAGE) ⇒ Revoke, Audit, Comment
+  - **TCL** (TRANSACTION CONTROL LANGUAGE) ⇒ Commit, Rollback
+  - **DQL** (DATA QUERY LANGUAGE) ⇒ Select
+  - **SFL** (SESSION CONTROL LANGUAGE) ⇒ Alter
+## AGRADECIMIENTOS
+**Adrián Iglesias Fernández**
+
+**Alejandro Becerra Suarez**
