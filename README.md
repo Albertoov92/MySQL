@@ -37,7 +37,13 @@ En la siguienteconsulta muestra la suma total de la poblacion de todo el mundo.
 SELECT SUM(population)
 FROM world
 ```
--
+- La instrucción **SELECT DISTINCT** se usa para devolver solo valores distintos (diferentes).    
+Dentro de una tabla, una columna a menudo contiene muchos valores duplicados; y a veces solo desea enumerar los diferentes valores (distintos).   
+La siguiente instrucción SQL selecciona solo los valores DISTINCT de la columna "País" en la tabla "Clientes":
+```SQL
+ SELECT DISTINCT Country
+ FROM Customers;
+```
 
 ### FROM
 La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
