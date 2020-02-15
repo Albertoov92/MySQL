@@ -3,7 +3,7 @@
 - [Detalles importantes](#detalles-importantes)
 - [Clausulas](#clausulas)
   - [SELECT](#select)
-    -[FUNCIONES DE SELECT](#funciones-de-select)
+    - [FUNCIONES DE SELECT](#funciones-de-select)
   - [FROM](#from)
   - [WHERE](#where)
     - [Operadores de WHERE](#operadores-de-where)
