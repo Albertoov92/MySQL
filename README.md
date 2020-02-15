@@ -30,20 +30,51 @@ SELECT column1, column2, ...
 FROM table_name;
 ```
 Aquí, columna 1, columna2, ... son los nombres de los campos que utilizamos para selecionar los datos que queremos mostrar.
-#### OPERADORES SELECT
-- El operador SUM se utiliza para sumar todos los valores de la columna "X".    
+#### FUNCIONES DE SELECT
+- La función **SUM ()** devuelve la suma total de una columna numérica..    
 En la siguienteconsulta muestra la suma total de la poblacion de todo el mundo.
 ```SQL
 SELECT SUM(population)
 FROM world
 ```
-- La instrucción **SELECT DISTINCT** se usa para devolver solo valores distintos (diferentes).    
+- La función **DISTINCT** se usa para devolver solo valores distintos (diferentes).    
 Dentro de una tabla, una columna a menudo contiene muchos valores duplicados; y a veces solo desea enumerar los diferentes valores (distintos).   
 La siguiente instrucción SQL selecciona solo los valores DISTINCT de la columna "País" en la tabla "Clientes":
 ```SQL
  SELECT DISTINCT Country
  FROM Customers;
 ```
+- La función **COUNT ()** devuelve el número de filas que coinciden con un criterio específico.   
+La siguiente instrucción SQL encuentra el número de productos:
+```sql
+SELECT COUNT(ProductID)
+FROM Products;
+```
+- La función **AVG ()** devuelve el valor promedio de una columna numérica.   
+La siguiente instrucción SQL encuentra el precio promedio de todos los productos:
+```SQL
+SELECT AVG(Price)
+FROM Products;
+```
+- La función **MIN ()** devuelve el valor más pequeño de la columna seleccionada.   
+La siguiente instrucción SQL encuentra el precio del producto más barato:
+```SQL
+SELECT MIN(Price) AS SmallestPrice
+FROM Products;
+```
+- La función **MAX ()** devuelve el valor más grande de la columna seleccionada.    
+La siguiente instrucción SQL encuentra el precio del producto más caro:
+```SQL
+SELECT MAX(Price) AS LargestPrice
+FROM Products;
+```
+- La función **LENGTH ()** devuelve la longitud de una cadena (en bytes).   
+La siguiente intrucción devuelve la longitud del texto en la columna "CustomerName", en bytes:
+```SQL
+SELECT LENGTH(CustomerName) AS LengthOfName
+FROM Customers;
+```
+- La función **REPLACE ()** reemplaza todas las apariciones de una subcadena dentro de una cadena, con una nueva subcadena.
 
 ### FROM
 La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
@@ -60,7 +91,7 @@ FROM Customers
 WHERE Country='Mexico';
 ```
 En esta instrucción SQL selecciona a todos los clientes del país "México", en la tabla "Customers".
-#### Operadores de WHERE
+#### OPERADORES DE WHERE
 - El operador **IN** es una abreviatura para múltiples condiciones OR.  
 La siguiente instrucción SQL selecciona a todos los clientes que se encuentran en "Germany", "France" o "UK":
 ```SQL
