@@ -79,7 +79,7 @@ SELECT nombre
 FROM world
 WHERE population > 200000000;
 ```
-- Los operadores **AND** y **OR**0se utilizan para filtrar registros en función de más de una condición:
+- Los operadores **AND** y **OR** se utilizan para filtrar registros en función de más de una condición:
   - El operador **AND** muestra un registro si todas las condiciones separadas por AND son verdaderas.    
   La siguiente instrucción SQL selecciona todos los campos de "Clientes" donde el país es "Alemania" Y la ciudad es "Berlín":
   ```sql
