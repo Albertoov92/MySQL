@@ -30,6 +30,15 @@ SELECT column1, column2, ...
 FROM table_name;
 ```
 Aquí, columna 1, columna2, ... son los nombres de los campos que utilizamos para selecionar los datos que queremos mostrar.
+#### OPERADORES SELECT
+- El operador SUM se utiliza para sumar todos los valores de la columna "X".    
+En la siguienteconsulta muestra la suma total de la poblacion de todo el mundo.
+```SQL
+SELECT SUM(population)
+FROM world
+```
+-
+
 ### FROM
 La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
 ```SQL
@@ -133,7 +142,7 @@ INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 ```
 y producirá algo como esto:   
 ![Tabla3](3.PNG)
-## INER JOIN
+### INER JOIN
 La palabra clave **INNER JOIN** selecciona registros que tienen valores que coinciden en ambas tablas.    
 La siguiente instrucción SQL selecciona todos los pedidos con información del cliente:
 ```SQL
@@ -144,7 +153,7 @@ INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
 
 **Nota:** La palabra clave INNER JOIN selecciona todas las filas de ambas tablas siempre que haya una coincidencia entre las columnas. Si hay registros en la tabla "Pedidos" que no tienen coincidencias en "Clientes", ¡estos pedidos no se mostrarán!
 
-## LEFT JOIN
+### LEFT JOIN
 La palabra clave **LEFT JOIN** devuelve todos los registros de la tabla izquierda (tabla1) y los registros coincidentes de la tabla derecha (tabla2). El resultado es NULL desde el lado derecho, si no hay coincidencia.   
 La siguiente instrucción SQL seleccionará a todos los clientes y cualquier pedido que puedan tener:
 ```SQL
@@ -155,7 +164,7 @@ ORDER BY Customers.CustomerName;
 ```   
 
 **Nota:** La palabra clave LEFT JOIN devuelve todos los registros de la tabla izquierda (Clientes), incluso si no hay coincidencias en la tabla derecha (Pedidos).
-## RIGHT
+### RIGHT JOIN
 La palabra clave **RIGHT JOIN** devuelve todos los registros de la tabla derecha (tabla2) y los registros coincidentes de la tabla izquierda (tabla1). El resultado es NULL desde el lado izquierdo, cuando no hay coincidencia.    
 The following SQL statement will return all employees, and any orders they might have placed:
 ```SQL
