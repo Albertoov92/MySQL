@@ -9,10 +9,13 @@
     - [Operadores de WHERE](#operadores-de-where)
   - [ORDER BY](#order-by)
   - [GROUP BY](#group-by)
+  - [HAVING](#having)
+  - [LIMIT](#limit)
   - [JOIN](#join)
   - [INER JOIN](#iner-join)
   - [LEFT JOIN](#left-join)
   - [RIGHT JOIN](#right-join)
+  - [SUBCONSULTAS](#subconsultas)
 
 
 ## Detalles importantes
@@ -82,8 +85,27 @@ FROM Customers;
 La siguiente instrucción remplaza "X" por "M".
 ```SQL
 SELECT REPLACE("XYZ FGH XYZ", "X", "M");
-```   
-**Nota:** Esta función realiza un reemplazo entre mayúsculas y minúsculas.
+```
+  **Nota:** Esta función realiza un reemplazo entre mayúsculas y minúsculas.
+
+- La función **CONCAT ()** agrega dos o más expresiones juntas.   
+La siguiente instrución agrega tres columnas en la columna "Dirección":
+```sql
+SELECT CONCAT(Address, " ", PostalCode, " ", City) AS Address
+FROM Customers;  
+```
+- La función **ROUND ()** redondea un número a un número especificado de posiciones decimales.    
+La siguiente instrucción redondea la columna Precio (a un decimal) en la tabla "Productos":
+```sql
+SELECT ProductName, Price, ROUND(Price, 1) AS RoundedPrice
+FROM Products;
+```
+- La función **COALESCE ()** devuelve el primer valor no nulo en una lista.
+La siguiente instrucción nos muestra en movil de los profesores y en caso de que ese profesor no tenga movil pone el movil del centro que es 7884 15458 6878 .
+```sql
+SELECT nombre, COALESCE(movil,'7884 15458 6878') AS movil
+FROM profesor;
+```
 ### FROM
 La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
 ```SQL
@@ -172,6 +194,24 @@ SELECT COUNT(CustomerID), Country
 FROM Customers
 GROUP BY Country;
 ```
+### HAVING
+La cláusula HAVING se agregó a SQL porque la palabra clave WHERE no se pudo usar con funciones agregadas.   
+La siguiente instrucción SQL enumera el número de clientes en cada país. Solo incluya países con más de 5 clientes:
+```SQL
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+```
+
+### LIMIT
+La cláusula LIMIT se utiliza para especificar el número de registros que se devolverán.   
+Supongamos que deseamos seleccionar todos los registros del 1 al 30 (inclusive) de una tabla llamada "Pedidos". La consulta SQL se vería así:
+```SQL
+SELECT *
+FROM Orders
+LIMIT 30;
+```
 ### JOIN
 Una cláusula JOIN se usa para combinar filas de dos o más tablas, en función de una columna relacionada entre ellas.    
 Veamos una selección de la tabla "Pedidos":   
@@ -220,3 +260,13 @@ ORDER BY Orders.OrderID;
 ```
 
 **Nota:** La palabra clave RIGHT JOIN devuelve todos los registros de la tabla derecha (Empleados), incluso si no hay coincidencias en la tabla izquierda (Pedidos).
+### SUBCONSULTAS
+Una subconsulta es una consulta anidada en una instrucción SELECT, INSERT, UPDATE o DELETE, o bien en otra subconsulta. Las subconsultas se pueden utilizar en cualquier parte en la que se permita una expresión.    
+En este ejemplo, se utiliza una subconsulta para selecionar los países con  más poblacion que Rusia.
+```SQL
+SELECT nombre
+FROM world
+WHERE population >
+     (SELECT poblacion FROM world
+      WHERE nombre='Rusia');
+```
