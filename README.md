@@ -82,7 +82,7 @@ FROM Customers;
 La siguiente instrucción remplaza "X" por "M".
 ```SQL
 SELECT REPLACE("XYZ FGH XYZ", "X", "M");
-```
+```   
 **Nota:** Esta función realiza un reemplazo entre mayúsculas y minúsculas.
 ### FROM
 La intruccion FROM se utiliza para indicar en que tabla o tablas se encuentran los atributos que selecionamos con en SELECT.
