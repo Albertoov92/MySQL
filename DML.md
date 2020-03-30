@@ -12,6 +12,7 @@
 
   ### INSERT
 A instrución **INSERT** permite engadir datos a unha táboa.
+
 **FORMULA**
 ```sql
 INSERT INTO <nombreDeLaTabla>
@@ -21,6 +22,7 @@ INSERT INTO <nombreDeLaTabla>
   ) || (
   SELECT <atributoX> FROM <tablaX> ...);
 ```
+
 **EXEMPLO**
 ```sql
   INSERT INTO world
@@ -32,8 +34,10 @@ INSERT INTO <nombreDeLaTabla>
 Como podemos observar na sentencia anterior engadimos dúas tuplas con os valores especificados en **VALUES**, como podemos observar podemos engadir máis de una tupla a vez sempre que sepáresmos as tuplas por coma.
 
    **Nota** : Os  valores numéricos non van entre comillas.
+
 ### UPDATE
 A instrución **UPDATE** permite modificar datos.
+
 **FORMULA**
 ```sql
 UPDATE <nombreDeLaTabla>
@@ -45,6 +49,7 @@ SET <atributo1> = <valor1>,
 [WHERE <predicado>];
 ```
 **Nota** El WHERE es opcional
+
 **EXEMPLO**
 ```sql
 UPDATE world
@@ -55,12 +60,14 @@ OR name = 'PORTUGAL'
 No  exemplo anterior engadimos  a tupla Spain e Portugal o novo valor de continente que seria Asia. Se non establecemos o WHERE modificaríanse todos os continentes de todas as tuplas.
 ### DELETE
 A instrución **DELETE** serve para eliminar valores de algunhas tuplas ou hasta bases de datos.
+
 **FORMULA**
 ```SQL
 DELETE FROM <nombreDeLaTabla>
   WHERE <predicado>;
 ```
 **Nota**: Se non utilizamos o WHERE eliminiaremos toda a taboa.
+
 **EXEMPLO**
 ```SQL
 DELETE FROM world
