@@ -9,7 +9,17 @@
   Existen 3 instrucións que nos permitirán inserir datos nunha táboa **(INSERT)** , modificar eses datos **(UPDATE)** e borralos **(DELETE)**.
 
   ### INSERT
-A instrución **INSERT** permite engadir datos a unha táboa
+A instrución **INSERT** permite engadir datos a unha táboa.
+**FORMULA**
+```sql
+INSERT INTO <nombreDeLaTabla>
+  (<atributo1>[, <atributo2>, <atributo3>...])
+  VALUES (
+  (<valor1>[, <valor2>, <valor3>...])
+  ) || (
+  SELECT <atributoX> FROM <tablaX> ...);
+```
+**EXEMPLO**
 ```sql
   INSERT INTO world
   [(name, continent, area)]
@@ -21,4 +31,23 @@ Como podemos observar na sentencia anterior engadimos dúas tuplas con os valore
 
    **Nota** : Os  valores numéricos non van entre comillas.
 ### UPDATE
-A instrución **UPDATE** permite modificar datos
+A instrución **UPDATE** permite modificar datos.
+**FORMULA**
+```sql
+UPDATE <nombreDeLaTabla>
+SET <atributo1> = <valor1>,
+    <atrubuto2> = <valor2>,
+    ...3
+
+    <atributoN> = <valorN>
+[WHERE <predicado>];
+```
+**Nota** El WHERE es opcional
+**EXEMPLO**
+```sql
+UPDATE world
+SET continent = 'ASIA'
+WHERE name = 'SPAIN'
+OR name = 'PORTUGAL'
+```
+No  exemplo anterior engadimos  a tupla Spain e Portugal o novo valor de continente que seria Asia. Se non establecemos o WHERE modificaríanse todos os continentes de todas as tuplas.
