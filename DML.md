@@ -66,4 +66,4 @@ DELETE FROM <nombreDeLaTabla>
 DELETE FROM world
   WHERE continent = 'EUROPE';
 ```
-No exemplo, eliminamos todas as tuplas que conteñan o valor de continente igual  a EUROPE
+No exemplo, eliminamos todas as tuplas que conteñan o valor de continente igual  a EUROPE.
