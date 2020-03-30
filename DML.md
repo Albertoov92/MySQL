@@ -18,6 +18,7 @@ A instrución **INSERT** permite engadir datos a unha táboa
   ('PORTUGAL','EUROPE', 10);
 ```
 Como podemos observar na sentencia anterior engadimos dúas tuplas con os valores especificados en **VALUES**, como podemos observar podemos engadir máis de una tupla a vez sempre que sepáresmos as tuplas por coma.
-**NOTA**: Os  valores numéricos non van entre comillas.
+
+    **NOTA**: Os  valores numéricos non van entre comillas.
 ### UPDATE
 A instrución **UPDATE** permite modificar datos
