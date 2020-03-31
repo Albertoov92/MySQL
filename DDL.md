@@ -7,4 +7,4 @@ O sublanguage SQL é usado crear bases de datos, taboas, usuarios ou dominios. T
   ## Aclaración inicial
   >Cando algo esta entre ```[]``` é opcional.
   >Cando hai unha ```|```
-### ```CREATE```
+### ```CREATE``` 
