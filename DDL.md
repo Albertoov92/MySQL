@@ -1,17 +1,20 @@
 # Data Definition Language
 ## Índice
+  - [Detalles importantes](#detalles-importantes)
   - [O sublinguaxe DDL](#o-sublinguaxe-ddl)
     - [```CREATE```](#create)
       - [```CREATE (DATABASE|SCHEMA)```](#create-(databse|schema))
 
-### O sublinguaxe DDL
-
-O sublanguage SQL é usado crear bases de datos, taboas, usuarios ou dominios. Tamen nos permite engadir atributos cun tipos de da tos definidos e establecer restricions e establecer criterios nas taboas interelacionadas. Chámase DDL porque significa linguaxe de definición de datos.
-***
-  ## Aclaración inicial
+### Detalles importantes
   > Cando algo esta entre ```[]``` é opcional.    
   > Cando hai unha ```|``` significa OU.    
-  > Recomendase evitar o uso de acentos e espazos nas expresions
+  > Recomendase evitar o uso de acentos e espazos nas expresions.
+
+### O sublinguaxe DDL
+O sublanguage SQL é usado crear bases de datos, taboas, usuarios ou dominios. Tamen nos permite engadir atributos cun tipos de da tos definidos e establecer restricions e establecer criterios nas taboas interelacionadas. Chámase DDL porque significa linguaxe de definición de datos.
+
+
+
 
 
 ### ```CREATE```
