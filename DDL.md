@@ -18,7 +18,7 @@ O sublinguaxe SQL é usado para crear bases de datos, táboas, usuarios ou domin
   Ambos dous teñen a mesma función, declarar a Base de Datos na que engadiremos as táboas, datos e restricións.
   Anque dependendo do xestor utilizado pode variar a función de cada un. En MySQL podemos usar os dous indistintamente. Sen embargo en PostgreSQL. ```ESCHEMA``` é usado como unha capa intermedia entre ```DATABASE``` e as táboas que a compoñen.  
 
-    **FORMULÁ**
+    **FÓRMULA**
   ```SQL
   Create (DATABASE|SCHEMA)
          [IF NOT EXISTS] <nomeBD>
@@ -31,11 +31,24 @@ O sublinguaxe SQL é usado para crear bases de datos, táboas, usuarios ou domin
 - #### ```CREATE DOMAIN```
 Crearemos un dominio cando teñamos que repetir varias veces nunha BD o mesmo tipo de datos en distintos atributos. Ademais en caso de que tivésemos que modificalo, resulta moito mais sinxelo que ir atributo por atributo.
 
-  **Formula**
+  **FÓRMULA**
   ```SQL
   CREATE DOMAIN <nomeDoDominio> <tipoDeDato>
+                [NOT NULL]
+                [CHECK (restrición)]
   ;
   ```
   **Parámetros opcionais**
+
     > Engadimos ```NOT NULL```  a fórmula se queremos evitar os valores nulos.     
     > Usaremos  ```CHECK``` cando precisemos engadir restricións.
+
+- #### ```CREATE TABLE```
+Para crear táboas usaremos a seguinte formula.
+```SQL
+CREATE TABLE [IF NOT EXISTS] <nomeDaTaboa> (
+	     <nomeDoAtributo1> <tipoDeDato> [PRIMARY KEY],
+	     <nomeDoAtributoN> <dominioN>   [DEFAULT <'expresion'>] [NOT NULL] [UNIQUE],
+
+);
+```
