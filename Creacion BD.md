@@ -30,7 +30,7 @@
 ![funcionando](IMG/basededatos2/6.PNG)
 ![funcionando](IMG/basededatos2/7.PNG)
 
-#sHOW
+# SHOW
 ![funcionando](IMG/show/1.PNG)
 ![funcionando](IMG/show/2.PNG)
 
